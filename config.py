@@ -1,12 +1,22 @@
-config.py
-TELEGRAM_API_ID = 'YOUR_API_ID'  # Dari my.telegram.org
-TELEGRAM_API_HASH = 'YOUR_API_HASH'
-TELEGRAM_CHANNELS = ['BinanceKillers', 'wolfxsignals']  # List channel Telegram (username tanpa @)
+# config.py
+import os
+from dotenv import load_dotenv
 
-X_ACCOUNTS = ['BinanceKillers', 'wolfxsignals', 'signal0x']  # List akun X (username tanpa @)
+# Load environment variables
+load_dotenv()
 
-BOT_TOKEN = 'YOUR_BOT_TOKEN'  # Dari @BotFather
-CHAT_ID = 'YOUR_CHAT_ID'  # ID Telegram kamu
+# Telegram API Credentials
+TELEGRAM_API_ID = os.getenv('TELEGRAM_API_ID', '')
+TELEGRAM_API_HASH = os.getenv('TELEGRAM_API_HASH', '')
 
-CONFIDENCE_THRESHOLD = 70  # Kirim kalau skor > ini
-CHECK_INTERVAL = 1800  # Detik (30 menit)
+# Telegram Bot Credentials
+BOT_TOKEN = os.getenv('BOT_TOKEN', '')
+CHAT_ID = os.getenv('CHAT_ID', '')
+
+# Public settings (bisa tetap di file ini)
+TELEGRAM_CHANNELS = ['BinanceKillers', 'wolfxsignals']
+X_ACCOUNTS = ['BinanceKillers', 'wolfxsignals', 'signal0x']
+
+# Analysis settings
+CONFIDENCE_THRESHOLD = 70
+CHECK_INTERVAL = 1800
