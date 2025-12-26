@@ -1,0 +1,8 @@
+telethon
+beautifulsoup4
+textblob
+nltk
+transformers
+torch
+schedule
+requests
